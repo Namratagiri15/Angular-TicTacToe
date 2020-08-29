@@ -1,0 +1,20 @@
+<div class="parent">
+    <h1 class="center">Lets play {{title}}</h1>
+
+    <div class="container">
+        <label for="player1">Enter Player 1 name : </label>
+        <input type="text" name="player1" [(ngModel)]="player1"><br>
+        <label for="player2">Enter Player 2 name : </label>
+        <input type="text" name="player2" [(ngModel)]="player2"><br>
+        <p *ngIf="player1 && player2" class="welcome">
+            Hi {{player1}} and {{player2}}, lets play !!!
+        </p>
+    </div>
+
+    <app-square></app-square>
+
+    <div class="container">
+        <button mat-raised-button color="primary" (click)="playAgain()">Play Again!</button>
+        <p class="winner" *ngIf="winnerPlayer">Winner is {{winnerPlayer}}</p>
+    </div>
+</div> 
